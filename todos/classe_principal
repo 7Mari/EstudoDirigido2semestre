@@ -1,0 +1,126 @@
+package aplicacao;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+public class Faculdade {
+
+	public static void main(String[] args) {
+		Scanner leia = new Scanner(System.in);
+		
+		Professor professor = new Professor();
+		Aluno aluno = new Aluno();
+		Curso curso = new Curso();
+		Turma turma = new Turma();
+		
+		System.out.println("---SISTEMA DA FACULDADE---");
+
+		
+		System.out.println("Digite a quantidade de professores existentes: ");
+		professor.quantidade = leia.nextInt();
+		
+		System.out.println("Digite a quantidade de alunos existentes: ");
+		aluno.quantidade = leia.nextInt();
+		
+		System.out.println("Digite a quantidade de cursos existentes: ");
+		curso.quantidade = leia.nextInt();
+		
+		System.out.println("Confirmação: Professores: " +professor.quantidade+ " |Alunos: " +aluno.quantidade+ " |Cursos: " +curso.quantidade);
+		System.out.println("\n\n");
+		
+		System.out.println("Quantidade de professores contratados: ");
+		int contratados = leia.nextInt();
+		professor.addProfessor(contratados);
+		
+		System.out.println("Quantidade de professores demitidos: ");
+		int demitidos = leia.nextInt();
+		professor.subProfessor(demitidos);
+		
+		System.out.println("Quantidade de matriculas: ");
+		int matriculas = leia.nextInt();
+		aluno.addAluno(matriculas);
+		
+		System.out.println("Quantidade de matriculas canceladas: ");
+		matriculas = leia.nextInt();
+		aluno.subAluno(matriculas);
+		
+		System.out.println("Cursos retirados do sistema: ");
+		int qntd = leia.nextInt();
+		curso.subCurso(qntd);
+		
+		System.out.println("Cursos adicionados do sistema: ");
+		qntd = leia.nextInt();
+		curso.addCurso(qntd);
+		
+		System.out.println("Atualização: Professores: " +professor.quantidade+ " |Alunos: " +aluno.quantidade+ " |Cursos: " +curso.quantidade);
+		System.out.println("\n\n");
+
+		
+		System.out.println("---CADASTRO ALUNO---");
+		System.out.println("Informe o nome do aluno: ");
+		aluno.nome = leia.next();
+		
+		System.out.println("Informe o curso que está no momento: ");
+		aluno.nomeCurso = leia.next();
+		
+		System.out.println("Informe o número da turma: ");
+		turma.numero = leia.nextInt();
+		
+		System.out.println("Informe a quantidade de cursos cursados(se houver): ");
+		aluno.cursados = leia.nextInt();
+		
+		System.out.println("Dados Escolhidos: Aluno: " +aluno.nome+ " |Curso: " +aluno.nomeCurso+ "  |Número da turma: " +turma.numero+ " |Cursados: " +aluno.cursados);
+		
+		System.out.println("\n\n");
+
+		
+		System.out.println("---CADASTRO PROFESSOR---");
+		System.out.println("Informe o nome do professor: ");
+		professor.nome = leia.next();
+		
+		System.out.println("Informe o curso que ensina: ");
+		professor.nomeCurso = leia.next();
+		
+		System.out.println("Informe a quantidade de turmas que ensina: ");
+		turma.quantidadeProf = leia.nextInt();
+		
+		System.out.println("Dados Escolhidos: Professor: " +professor.nome+ "|Especialização: " +professor.nomeCurso+ " |Turmas: " +turma.quantidadeProf);
+
+		System.out.println("\n\n");
+
+
+		System.out.println("---CADASTRO CURSOS---");
+		System.out.println("Informe o nome do curso: ");
+		curso.nome = leia.next();
+		
+		System.out.println("Informe a quantidade de turmas desse curso: ");
+		turma.quantidadeCurso = leia.nextInt();
+
+		System.out.println("Informe o preço desse curso: ");
+		curso.preco = leia.nextFloat();
+		
+		System.out.println("Dados Escolhidos: Curso: " +curso.nome+ " |Turmas existentes: " +turma.quantidadeCurso+ " |Preço: R$" +curso.preco);
+		System.out.println("\n\n");
+
+		
+		
+		System.out.println("Atualização do Sistema: Professores: " +professor.quantidade+ " |Alunos: " +aluno.quantidade+ " |Cursos: " +curso.quantidade);
+		
+		System.out.println("Atualização dos Cadastros");
+		
+		System.out.println(" |Aluno: " +aluno.nome+ "            |Professor: " +professor.nome+ "            |Curso: " +curso.nome);
+		System.out.println(" |Curso: " +aluno.nomeCurso+"          |Especialização: " +professor.nomeCurso+ "    |Turmas existentes: " +turma.quantidadeCurso);
+		System.out.println(" |Número da turma: " +turma.numero+ "   |Turmas: " +turma.quantidadeProf+ "           |Preço: R$" +curso.preco);
+		System.out.println(" |Cursados: " +aluno.cursados);
+
+		JOptionPane.showConfirmDialog(null, "Atualização do Sistema: Professores: " +professor.quantidade+ " |Alunos: " +aluno.quantidade+ " |Cursos: " +curso.quantidade);
+		JOptionPane.showConfirmDialog(null, "Atualização dos Cadastros:  \n"
+				+ "\n |Aluno: " +aluno.nome+ " |Curso: " +aluno.nomeCurso+ "  |Número da turma: " +turma.numero+ " |Cursados: " +aluno.cursados+
+				"\n |Professor: " +professor.nome+ " |Especialização: " +professor.nomeCurso+ " |Turmas: " +turma.quantidadeProf+
+				"\n |Curso: " +curso.nome+ " |Turmas existentes: " +turma.quantidadeCurso+ " |Preço: R$" +curso.preco);
+		
+		
+		leia.close();
+
+	}
+
+}
