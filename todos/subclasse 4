@@ -1,0 +1,8 @@
+package aplicacao;
+
+public class Turma {
+	public int quantidadeProf;
+	public int quantidadeCurso;
+	public int numero;
+
+}
