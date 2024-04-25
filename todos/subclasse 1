@@ -1,0 +1,16 @@
+package aplicacao;
+
+public class Professor {
+	public String nome;
+	public int quantidade;
+	public String nomeCurso;
+	
+	
+	public void addProfessor(int contratados) {
+		this.quantidade += contratados;
+	}
+	
+	public void subProfessor(int demitidos) {
+		this.quantidade -= demitidos;
+	}
+}
