@@ -1,0 +1,16 @@
+package aplicacao;
+
+public class Curso {
+	public String nome;
+	public int quantidade;
+	public float preco;
+	
+	public void addCurso(int qntd) {
+		this.quantidade += qntd;
+	}
+	
+	public void subCurso(int qntd) {
+		this.quantidade -= qntd;
+	}
+
+}
