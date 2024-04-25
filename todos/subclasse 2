@@ -1,0 +1,16 @@
+package aplicacao;
+
+public class Aluno {
+	public String nome;
+	public String nomeCurso;
+	public int quantidade;
+	public int cursados;
+	
+	public void addAluno(int matriculas) {
+		this.quantidade += matriculas;
+	}
+	
+	public void subAluno(int matriculas) {
+		this.quantidade -= matriculas;
+	}
+}
